@@ -1,0 +1,23 @@
+{
+  "name": "labelshrink",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Discord bot that resizes PDF labels onto A4 pages",
+  "main": "app.js",
+  "type": "module",
+  "engines": {
+    "node": ">=18.x"
+  },
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "discord.js": "^14.27.0",
+    "dotenv": "^16.0.3"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.0"
+  }
+}
