@@ -14,7 +14,7 @@ Before you start, you'll need to install [NodeJS](https://nodejs.org/en/download
 - `attach.files`
 - `read.message.history`
 
-And generate an OAuth2 invite link. The bot will then auto respond to any pdf files. No scoping is currently implemented.
+And generate an OAuth2 invite link. The bot will then auto respond to any pdf files, or to messages with a link to a hosted pdf (the bot checks the link's response headers, not just the file extension). No scoping is currently implemented.
 
 ## Docker
 

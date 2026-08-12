@@ -3,8 +3,7 @@ CONTAINER := labelshrink
 
 .PHONY: build start stop restart logs
 
-default:
-	start
+default: start
 
 build:
 	docker build -t $(IMAGE) .
