@@ -4,7 +4,7 @@ Simple discord bot to automate shrinking shipping labels to a4 format, so that t
 
 ## Running app locally
 
-Before you start, you'll need to install [NodeJS](https://nodejs.org/en/download/) and 
+Before you start, you'll need to install [NodeJS](https://nodejs.org/en/download/), Python 3 (the bot calls `pdf_to_a4.py`, which uses the standard library only) and 
 
 [create a Discord app](https://discord.com/developers/applications) with the proper permissions:
 

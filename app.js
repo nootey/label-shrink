@@ -6,9 +6,12 @@ import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { lookup } from 'node:dns/promises';
 import { isIP } from 'node:net';
+import { fileURLToPath } from 'node:url';
 import 'dotenv/config';
 
 const run = promisify(execFile);
+
+const CONVERTER = fileURLToPath(new URL('pdf_to_a4.py', import.meta.url));
 
 const MAX_PDF_BYTES = 20 * 1024 * 1024;
 const FETCH_TIMEOUT_MS = 15_000;
@@ -45,7 +48,7 @@ client.on('messageCreate', async (msg) => {
     const outPath = join(dir, 'out.pdf');
 
     await writeFile(inPath, buffer);
-    await run('bash', ['./pdf-to-a4.sh', inPath, outPath], { timeout: 30_000 });
+    await run('python3', [CONVERTER, inPath, outPath], { timeout: 30_000 });
 
     await msg.reply({
       files: [new AttachmentBuilder(outPath, {
